@@ -172,7 +172,7 @@ package com.asframe.load
 		}
 		protected function onIoError(event:IOErrorEvent):void
 		{
-			trace("资源加载失败:" + loadData.url);
+			trace("资源加载失败:" + loadData.url + event);
 			loadOver(event,failResult);
 		}
 		private function loadOver(event:Event,resultFun:Function):void
