@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This build file provdes a close approximation of the build process 
+     and build settings inside Flash Builder, but it is not an exact copy.  
+     Please customize this file as necessary. -->
+<!-- Generated from project settings as of 12-8-3 下午5:38 -->
+<project name="ASFrame" default="build" basedir="E:/workscopes/ASFrame/FlashProject/ASFrame">
+
+	<property name="FLEX_HOME" value="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/sdks/4.6.0"/>
+	<property name="SDK_VERSION" value="4.6.0.23201"/>
+
+	<taskdef name="mxmlc" classname="flex.ant.MxmlcTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+	<taskdef name="compc" classname="flex.ant.CompcTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+	<taskdef name="html-wrapper" classname="flex.ant.HtmlWrapperTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+	<taskdef name="asdoc" classname="flex.ant.AsDocTask" classpath="${FLEX_HOME}/ant/lib/flexTasks.jar"/>
+
+	<property name="PROJECT_DIR" value="E:/workscopes/ASFrame/FlashProject/ASFrame"/>
+	<property name="SOURCE_DIR" value="${PROJECT_DIR}/src"/>
+	<property name="OUTPUT_DIR" value="${PROJECT_DIR}/bin-debug"/>
+	<property name="LOCALE" value="en_US"/>
+
+	<target name="build">
+		<antcall target="clean"/>
+		<antcall target="compile"/>
+		<antcall target="asdoc"/>
+	</target>
+
+	<target name="clean">
+		<delete includeemptydirs="true">
+			<fileset dir="${OUTPUT_DIR}" includes="**/*"/>
+		</delete>
+	</target>
+
+	<target name="compile">
+		<mxmlc 
+			file="${SOURCE_DIR}/ASFrame.as"
+			output="${OUTPUT_DIR}/ASFrame.swf"
+			locale="${LOCALE}"
+			static-rsls="false"
+			accessible="true"
+		>
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+
+			<source-path path-element="${SOURCE_DIR}"/>
+
+			<library-path file="${FLEX_HOME}/frameworks/libs/textLayout.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/osmf.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/authoringsupport.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/core.swc" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/Common" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject_Extended" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/locale/version4locale/" append="true"/>
+
+			<external-library-path file="${FLEX_HOME}/frameworks/libs/player/11.1/playerglobal.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/authoringsupport.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/core.swc" append="true"/>
+
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/Common" includes="*" append="true"/>
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject" includes="*" append="true"/>
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject_Extended" includes="*" append="true"/>
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/locale/version4locale/" includes="*" append="true"/>
+
+		</mxmlc>
+
+
+	</target>
+
+	<target name="asdoc">
+		<asdoc output="${OUTPUT_DIR}/asdoc" lenient="true" failonerror="false">
+			<doc-sources path-element="${SOURCE_DIR}/com"/>
+			<load-config filename="${FLEX_HOME}/frameworks/flex-config.xml"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/textLayout.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/osmf.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/authoringsupport.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/core.swc" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/Common" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject_Extended" append="true"/>
+			<library-path file="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/locale/version4locale/" append="true"/>
+
+			<external-library-path file="${FLEX_HOME}/frameworks/libs/player/11.1/playerglobal.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/authoringsupport.swc" append="true"/>
+			<library-path file="${FLEX_HOME}/frameworks/libs/core.swc" append="true"/>
+
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/Common" includes="*" append="true"/>
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject" includes="*" append="true"/>
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/libs/version4libs/ASProject_Extended" includes="*" append="true"/>
+			<library-path dir="D:/GreenSoftware/Adobe/Adobe Flash Builder 4.6/eclipse/plugins/com.adobe.flexbuilder.flexunit_4.6.0.328916/flexunitframework/locale/version4locale/" includes="*" append="true"/>
+		</asdoc>
+	</target>
+	
+	<!-- 生成项目文件的SWC -->
+		<target name="compileSWC">  
+	    	<property name="project.name" value="ASFrame" />  
+	        <echo message="star complie Flex Library Project..." />  
+	        <echo message="build ${project.name}.swc" />  
+	            <compc output="bin/${project.name}.swc" debug="false" incremental="true">  
+	                <!-- 指定项目的源码目录 -->  
+	                <source-path path-element="${SOURCE_DIR}" />  
+	                <!-- 指定编译的文件列表 -->  
+	                <include-sources dir="${SOURCE_DIR}">  
+	                        <include name="**/*.as" />  
+	                		<exclude name="ASFrame.as" />
+	                		<exclude name="ResMetadataTest.as" />
+	                		<exclude name="FlexUnitCompilerApplication.as" />
+	                		<exclude name="FlexUnitApplication.as" />
+	                </include-sources>  
+	                <!-- 将Flex SDK 作为外部库进行引用 -->  
+	                <compiler.external-library-path dir="${FLEX_HOME}/frameworks">  
+	                        <include name="**/*.swc" />  
+	                </compiler.external-library-path>  
+	        </compc>  
+	        <!-- 删除缓存文件 -->  
+	        <delete>  
+	                <fileset dir="bin" includes="*.cache" />  
+	        </delete>  
+	        <echo message="complier Flex Library Project finished!" />  
+		</target>
+	
+</project>

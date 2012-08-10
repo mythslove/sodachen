@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmlConfig type="" attribute="attribute">
+	<attribute name="name" value="sodaChen" />
+	<attribute name="count" value="100" />
+	<attribute name="color" value="58647" />
+	<attribute name="number" value="10.56" />
+	<attribute name="ary">
+		<attribute name="name" value="sodaChen1" />
+		<attribute name="count" value="1001" />
+		<attribute name="color" value="586471" />
+		<attribute name="number" value="10.561" />
+	</attribute>
+	<attribute name="configBean">
+		<attribute name="name" value="sodaChen2" />
+		<attribute name="count" value="1002" />
+		<attribute name="color" value="586472" />
+		<attribute name="number" value="10.562" />
+	</attribute>
+</xmlConfig>
