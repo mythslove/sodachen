@@ -1,0 +1,6 @@
+type:com.asframe.config.ConfigBean
+name = sodaChen
+count = 100
+color = 58647
+number = 10.57
+bool = true
