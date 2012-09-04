@@ -18,6 +18,7 @@ package com.asframe.load
 	import flash.events.IEventDispatcher;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
+	import flash.system.LoaderContext;
 
 	/**
 	 *
@@ -26,11 +27,13 @@ package com.asframe.load
 	public class DisplayLoader extends AbstractLoader
 	{
 		private var loader:Loader;
+		private var coaderContext:LoaderContext;
 		
 		public function DisplayLoader()
 		{
 			super();
 			loader = new Loader();
+			coaderContext = new LoaderContext(false,domain);
 		}
 		public override function getClass():Class
 		{
@@ -50,7 +53,7 @@ package com.asframe.load
 				}
 			}
 			addLoadEvent(loader.contentLoaderInfo);
-			loader.load(request);
+			loader.load(request,coaderContext);
 		}
 		public function getDisplay():DisplayObject
 		{

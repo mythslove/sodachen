@@ -45,7 +45,11 @@ package com.asframe.config.properties
 				start = 1;
 			}
 			var type:Type = null;
-			if(targetClass != Object)
+			if(targetClass == null)
+			{
+				targetClass =  Object;
+			}
+			else if(targetClass != Object)
 			{
 				type = Type.forClass(targetClass);
 			}

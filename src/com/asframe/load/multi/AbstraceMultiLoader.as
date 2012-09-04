@@ -28,6 +28,7 @@ package com.asframe.load.multi
 	
 	import flash.events.Event;
 	import flash.events.IOErrorEvent;
+	import flash.system.ApplicationDomain;
 	
 	import mx.utils.LoaderUtil;
 	
@@ -65,6 +66,7 @@ package com.asframe.load.multi
 		/** 是否所有的资源都以二进制的形式加载 **/
 		protected var _isByteLoad			:Boolean;
 		protected var nextLoader			:INextLoader;
+		protected var domain				:ApplicationDomain;
 		
 		private var isStart					:Boolean;
 		
@@ -78,6 +80,10 @@ package com.asframe.load.multi
 			log = LoggerFactory.getLogger(getClass());
 			isStart = true;
 			setNextLoader(new DefaultNextLoader());
+		}
+		public function setApplicationDomain(domain:ApplicationDomain):void
+		{
+			this.domain = domain;
 		}
 		public function addFailResult(failResult:Function):void
 		{

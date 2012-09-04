@@ -10,6 +10,8 @@
  */
 package com.asframe.utils
 {
+	import com.asframe.slf4j.Logger;
+
 	/**
 	 *
 	 * @author sodaChen
@@ -31,7 +33,7 @@ package com.asframe.utils
 					{
 						errorFun(error);
 					}
-					trace(error.getStackTrace());
+					Logger.error(FunctionUtils,error.getStackTrace());
 				}
 			}
 		}
