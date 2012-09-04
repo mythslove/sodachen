@@ -13,6 +13,8 @@ package com.asframe.load
 	import com.asframe.lang.IDisposable;
 	import com.asframe.lang.IUrlVersion;
 	import com.asframe.loading.ILoading;
+	
+	import flash.system.ApplicationDomain;
 
 	/**
 	 * 加载接口
@@ -20,6 +22,7 @@ package com.asframe.load
 	 */
 	public interface ILoader extends IDisposable,IUrlVersion
 	{
+		function setApplicationDomain(app:ApplicationDomain):void;
 		/**
 		 * 设置加载的loading加载显示器 
 		 * @param loading

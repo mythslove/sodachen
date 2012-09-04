@@ -33,6 +33,7 @@ package com.asframe.config
 		public static const CSV_TYPE:String = "csv";
 		/** 文件类型 **/
 		public static const PROPERTY_TYPE:String = "property";
+		public static const PROPERTIES_TYPE:String = "properties";
 		/** ini类型 **/
 		public static const INI_TYPE:String = "ini";
 		
@@ -50,6 +51,7 @@ package com.asframe.config
 			configMap.put(XMl_TYPE,xmlAndObj);
 			configMap.put(CSV_TYPE,csvAndObj);
 			configMap.put(PROPERTY_TYPE,propertiesAndObj);
+			configMap.put(PROPERTIES_TYPE,propertiesAndObj);
 			configMap.put(INI_TYPE,propertiesAndObj);
 		}
 		/**
@@ -117,13 +119,13 @@ package com.asframe.config
 		
 		{
 			var arys:Array = configPath.split(".");
-			var type:String = arys[arys.length];
+			var type:String = arys[arys.length - 1];
 			var loadResult:Function = function loadResult(loadData:LoadData):void
 			{
 				target = configToObj(loadData.data,target,type,applicationDomain);
 				onComplete(target);
 			};
-			LoadManager.load(configPath,loadResult)
+			LoadManager.loadByNew(configPath,loadResult)
 		}
 		/**
 		 * 根据类型获取到对应的解析，封装器 

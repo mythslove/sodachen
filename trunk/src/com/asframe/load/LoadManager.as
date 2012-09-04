@@ -22,6 +22,10 @@ package com.asframe.load
 	 */
 	public class LoadManager
 	{
+		/** 版本号 **/
+		public static var version:String;
+		/** 资源头路径 **/
+		public static var headPath:String;
 		/** 默认loading界面 **/
 		public static var defaulteLoading:ILoading;
 		/** 默认是同步加载器 **/
@@ -42,6 +46,7 @@ package com.asframe.load
 			{
 				loading = defaulteLoading;
 			}
+			mutilLoader.setUrlVersion(headPath,version);
 			mutilLoader.load(url,sucessResult,target,loading);
 		}
 		
@@ -54,6 +59,7 @@ package com.asframe.load
 			//每次都是重新new 一个新的loader
 			var loader:ILoader = LoaderFactory.createLoaderByUrl(url);
 			loadMap.put(loader,loader);
+			loader.setUrlVersion(headPath,version);
 			loader.load(url,function(loadData:LoadData):void
 							{
 								loadMap.remove(loadData.loader);

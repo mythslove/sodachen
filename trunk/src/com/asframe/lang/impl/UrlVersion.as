@@ -31,7 +31,7 @@ package com.asframe.lang.impl
 		}
 		public function setUrlVersion(urlHead:String,version:String):void
 		{
-			if(urlHead != null)
+			if(urlHead != null && urlHead != "")
 			{
 				if(urlHead.indexOf("/") != (urlHead.length - 1))
 				{
@@ -39,7 +39,7 @@ package com.asframe.lang.impl
 				}
 				this.urlHead = urlHead;
 			}
-			if(version != null)
+			if(version != null && version != "")
 			{
 				if(version.indexOf("?=") == -1)
 				{

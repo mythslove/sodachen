@@ -22,6 +22,7 @@ package com.asframe.load
 	import flash.events.ProgressEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
+	import flash.system.ApplicationDomain;
 	
 	/**
 	 * 抽象加载器
@@ -43,11 +44,17 @@ package com.asframe.load
 		protected var loadData				:LoadData;
 		/** 是否正在loading中 **/
 		protected var	_isLoading			:Boolean;	
+		protected var domain				:ApplicationDomain;
 		
 		public function AbstractLoader()
 		{ 
 			//获取到对象的Class对象
 			log = LoggerFactory.getLogger(getClass());
+			domain = ApplicationDomain.currentDomain;
+		}
+		public function setApplicationDomain(domain:ApplicationDomain):void
+		{
+			this.domain = domain;
 		}
 		/**
 		 * 返回此 Object 的运行时类

@@ -31,16 +31,12 @@ package com.asframe.utils
 	public final class ClassUtils
 	{
 		/**
-		 * Returns a <code>Class</code> object that corresponds with the given
-		 * instance. If no correspoding class was found, a
-		 * <code>ClassNotFoundError</code> will be thrown.
+		 * 根据对象的实例返回<code>Class<code>对象
 		 *
-		 * @param instance the instance from which to return the class
-		 * @param applicationDomain the optional applicationdomain where the instance's class resides
+		 * @param instance 需要返回class对象的实例
+		 * @param applicationDomain 域对象
 		 *
-		 * @return the <code>Class</code> that corresponds with the given instance
-		 *
-		 * @see org.as3commons.lang.ClassNotFoundError
+		 * @return 实例的<code>Class</code>
 		 */
 		public static function forInstance(instance:*, applicationDomain:ApplicationDomain = null):Class 
 		{
@@ -166,7 +162,19 @@ package com.asframe.utils
 			}
 			return result;
 		}
-		
+		/**
+		 * 根据对象获取到第一个字母小写的类名称 
+		 * @param obj
+		 * @return 
+		 * 
+		 */		
+		public static function getMinClassName(obj:Object):String
+		{
+			var className:String = getClassName(obj);
+			//首字母转成小写
+			var first:String = className.substr(0,1).toLowerCase();
+			return first + className.substr(1,className.length);
+		}
 		/**
 		 * Determines if the class or interface represented by the clazz1 parameter is either the same as, or is
 		 * a superclass or superinterface of the clazz2 parameter. It returns true if so; otherwise it returns false.
